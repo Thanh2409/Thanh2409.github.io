@@ -1,0 +1,75 @@
+<div class="header container" style="padding-left:0px; padding-right: 0px; ">
+    <img id="id.banner" src="../assets/images/banner.png" style="width: 100%;">
+</div>
+<nav class=" container navbar navbar-expand-sm">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <strong><a class="nav-link" [routerLink]="['/trangchu']">Trang Chủ</a></strong>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link " [routerLink]="['/danhmucmonhoc']">
+                <strong> Danh Mục Môn Học</strong>
+            </a>
+        </li>
+        <li class="nav-item">
+            <strong><a class="nav-link" [routerLink]="['/lienhe']">Liên Hệ</a></strong>
+        </li>
+        <li class="nav-item">
+            <strong><a class="nav-link" [routerLink]="['/gopy']">Góp Ý</a></strong>
+        </li>
+        <li class="nav-item">
+            <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
+        </li>
+        <li class="nav-item">
+            <strong><a class="nav-link" [routerLink]="['/dangnhap']">Đăng Nhập</a></strong>
+        </li>
+    </ul>
+</nav>
+
+<div class="container" style="padding:0;">
+    <div class="card" style="float: right; width: 20%;">
+        <div class="card-header">
+            Danh Mục Môn Học
+        </div>
+        <div class="card-body">
+            <ul *ngFor="let p of dulieu">
+                <li>{{p.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container" style="padding-left: 0; ">
+    <div class="card">
+        <div class="card-body text-center" style="background-color: #8d78a1; ">
+            <div class="row">
+
+                <div class="col col-6"
+                    *ngFor="let p of dulieu | paginate: { itemsPerPage: itemsperpage, currentPage: currentpage }"
+                    style="margin-bottom: 15px;background-color: #bcb5ad">
+                    <div class="card">
+                        <div class="card-header" style="background-color:#70af67">
+                            <strong>
+                                {{p.name}}
+                            </strong>
+                        </div>
+                        <div class="card-body" id="col6">
+                            <img src="../assets/images/{{p.anh}}">
+                        </div>
+                    </div>
+                </div>
+                <hr style="background-color:red">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" (click)="previouspage()">Previous</a></li>
+        <li class="page-item"><a class="page-link" (click)="pagenow(1)">1</a></li>
+        <li class="page-item"><a class="page-link" (click)="pagenow(2)">2</a></li>
+        <li class="page-item"><a class="page-link" (click)="pagenow(3)">3</a></li>
+        <li class="page-item"><a class="page-link" (click)="pagenow(4)">4</a></li>
+        <li class="page-item"><a class="page-link" (click)="pagenow(5)">5</a></li>
+        <li class="page-item"><a class="page-link" (click)="nextpage()">Next</a></li>
+    </ul>
+</div>

@@ -1,0 +1,45 @@
+.nav-link {
+    color: black;
+}
+
+.navbar ul li a{
+    color: black;
+    margin-left: 5px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.navbar ul li:hover{
+    background-color: rgb(235, 223, 223);
+}
+
+.navbar{
+    background-color: rgb(151, 157, 163)
+}
+
+.card-body ul li{
+    border-bottom: 1px solid rgb(122, 111, 111);
+    border-right: 1px solid rgb(122, 111, 111);
+    border-left: 1px solid rgb(122, 111, 111);
+    border-top: 1px solid rgb(122, 111, 111);
+    list-style: none;
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.card-body ul{
+    margin: 0;
+    padding: 0;
+}
+
+
+.card-header{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container-fluid{
+    transform: translateX(30%)
+}

@@ -1,0 +1,60 @@
+<div class="header container" style="padding-left:0px; padding-right: 0px; ">
+        <img id="id.banner" src="../assets/images/banner.png" style="width: 100%;">
+    </div>
+    <nav class=" container navbar navbar-expand-sm">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <strong><a class="nav-link" [routerLink]="['/trangchu']">Trang Chủ</a></strong>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link " [routerLink]="['/danhmucmonhoc']">
+                    <strong> Danh Mục Môn Học</strong>
+                </a>
+            </li>
+            <li class="nav-item">
+                <strong><a class="nav-link" [routerLink]="['/lienhe']">Liên Hệ</a></strong>
+            </li>
+            <li class="nav-item">
+                <strong><a class="nav-link" [routerLink]="['/gopy']">Góp Ý</a></strong>
+            </li>
+            <li class="nav-item">
+                <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
+            </li>
+            <li class="nav-item">
+                <strong><a class="nav-link" [routerLink]="['/dangnhap']">Đăng Nhập</a></strong>
+            </li>
+        </ul>
+    </nav>
+    
+    
+    <div class="container " style="padding:0">
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(to right, #fc00ff, #00dbde);margin-left: 0">
+                <h2 style="text-align: center">Đăng Nhập</h2>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                            <label>Tài Khoản</label>
+                            <input class="form-control" type="text" name="hoten" placeholder="Username">
+                            <label style="margin-top: 25px;">Xác Nhận Email</label>
+                            <input class="form-control" type="text" name="hoten" placeholder="Email">
+                            <label style="margin-top: 30px;">Mật Khẩu Mới</label>
+                            <input class="form-control" type="password" name="password" placeholder="Password">
+                            <label style="margin-top: 30px;">Xác Nhận Mật Khẩu</label>
+                            <input class="form-control" type="password" name="password" placeholder="Repeat password">
+                    </div>
+                    <div class="row" style="margin-top: 25px;">
+                        <div class="col-6">
+                                <a [routerLink]="['/dangki']">Đăng Kí</a>
+                        </div>
+                        <div class="col-6">
+                                <a [routerLink]="['/dangnhap']" style="float: right">Đăng Nhập</a>
+                        </div>
+                    </div>
+                    
+                </form>
+                <button class="btn" id="dangnhap"><strong>Xác Nhận</strong></button>
+            </div>
+        </div>
+    </div>

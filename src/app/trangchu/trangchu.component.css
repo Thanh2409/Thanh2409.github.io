@@ -1,0 +1,33 @@
+
+.content{
+    width: 75%;
+
+}
+
+.gioithieu{
+    width: 25%;
+}
+
+#marquee{
+    background-color: rgb(92, 136, 218);
+}
+                                                            .nav-link {
+                                                                color: black;
+                                                            }
+
+                                                            .navbar ul li a{
+                                                                color: black;
+                                                                margin-left: 5px;
+                                                                text-align: center;
+                                                                margin-right: 5px;
+
+                                                            }
+
+                                                            .navbar ul li:hover{
+                                                                background-color: rgb(235, 223, 223);
+                                                            }
+
+                                                            .navbar{
+                                                                background-color: rgb(151, 157, 163)
+                                                            }
+

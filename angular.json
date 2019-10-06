@@ -118,8 +118,13 @@
               "devServerTarget": "assigment:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "assigment"
 }

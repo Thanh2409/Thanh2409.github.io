@@ -1,0 +1,69 @@
+.nav-link {
+    color: black;
+}
+
+.navbar ul li a{
+    color: black;
+    margin-left: 5px;
+    text-align: center;
+    margin-right: 5px;
+
+}
+
+.navbar ul li:hover{
+    background-color: rgb(235, 223, 223);
+    border-radius: 6px 6px;
+}
+
+.navbar{
+    background-color: rgb(151, 157, 163);
+}
+/* ----Header------ */
+.card-baithi{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.card-baithi .card .card-boy .pagi{
+   display: none;
+   margin-top: 15px;
+}
+
+/* ----DropDown Tai Khoan------- */
+.dropdown {
+    position: relative;
+    display: block;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    background-color: #e9ecefc7;
+    border-radius: 5px 5px;
+    width: 130px;
+    z-index: 1;
+  
+  }
+  
+  .dropdown-content p {
+    border-radius: 5px 5px;
+    height: 30px;
+    margin-bottom: 0px;
+    margin-top: 3px;
+    color:#47688c;
+    text-shadow: 2px 1px 1px #e9ecef;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content {
+      display: none;
+  }
+  .dropdown-content p:hover{
+    background-color: rgb(91, 230, 121);
+    border-radius: 7px 7px;
+}
+
+.btn-success{
+    margin-left: 40%;
+}

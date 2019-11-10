@@ -1,0 +1,67 @@
+<div class="header container" style="padding-left:0px; padding-right: 0px; ">
+  <img id="id.banner" src="../assets/images/banner.png" style="width: 100%;">
+</div>
+
+<nav class=" container navbar navbar-expand-sm">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/trangchu']">Trang Chủ</a></strong>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link " [routerLink]="['/danhmucmonhoc']">
+        <strong> Danh Mục Môn Học</strong>
+      </a>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/lienhe']">Liên Hệ</a></strong>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/gopy']">Góp Ý</a></strong>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
+    </li>
+    <li class="nav-item dropdown">
+        <strong>
+            <a class="nav-link " >
+              <span>Tài Khoản</span>
+              <div class="dropdown-content">
+                <p [routerLink]="['/dangnhap']">Đăng Nhập</p>
+                <p [routerLink]="['/dangki']">Đăng Kí</p>
+                <p [routerLink]="['/quenmatkhau']">Quên Mật Khẩu</p>
+                <p [routerLink]="['/thongtin']">Thông Tin</p>
+              </div>
+            </a>
+          </strong>
+    </li>
+  </ul>
+</nav>
+
+<div class="container card-baithi" >
+  <div class="card ">
+    <div class="card-header text-center">
+      <strong>Bài Thi</strong>
+    </div>
+    <div class="card-body">
+      <div class="row" *ngFor="let item of quizs | paginate: { itemsPerPage: itemsperpage, currentPage: currentpage }">
+        <div class="col-5" style="padding: 0;">
+          <img src="../assets/images/baithi.png" style="width:99%;padding: 0;">
+        </div>
+        <div class="col-7">
+          <p>{{item.Text}}
+          </p>
+          <div *ngFor="let item1 of item.Answers">
+            <input type="radio" name="1" (click)="check(item.Id,item1.Id)">{{item1.Text}}<br>
+          </div>
+        </div>
+      </div>
+      <div class="pagi">
+      <pagination-controls  (pageChange)="currentpage = $event" style="text-align: center;"></pagination-controls>
+    </div>
+    <button class="btn btn-success" (click)="chamdiem()">Chấm Điểm</button>
+    </div>
+  </div>
+  <div>
+    <countdown #cd [config]="{leftTime:900}"></countdown>
+  </div>
+</div>

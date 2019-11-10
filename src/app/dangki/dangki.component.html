@@ -20,8 +20,18 @@
             <li class="nav-item">
                 <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
             </li>
-            <li class="nav-item">
-                <strong><a class="nav-link" [routerLink]="['/dangnhap']">Đăng Nhập</a></strong>
+            <li class="nav-item dropdown">
+                    <strong>
+                            <a class="nav-link " >
+                              <span>Tài Khoản</span>
+                              <div class="dropdown-content">
+                                <p [routerLink]="['/dangnhap']">Đăng Nhập</p>
+                                <p [routerLink]="['/dangki']">Đăng Kí</p>
+                                <p [routerLink]="['/quenmatkhau']">Quên Mật Khẩu</p>
+                                <p [routerLink]="['/thongtin']">Thông Tin</p>
+                              </div>
+                            </a>
+                          </strong>
             </li>
         </ul>
     </nav>
@@ -30,29 +40,29 @@
     <div class="container " style="padding:0">
         <div class="card">
             <div class="card-header" style="background: linear-gradient(to right, #fc00ff, #00dbde);margin-left: 0">
-                <h2 style="text-align: center">Đăng Nhập</h2>
+                <h2 style="text-align: center">Đăng Kí</h2>
             </div>
             <div class="card-body">
                 <form>
                     <div class="form-group">
                             <label>Tài Khoản</label>
-                            <input class="form-control" type="text" name="hoten" placeholder="Username">
+                            <input class="form-control" type="text" name="taikhoan" placeholder="Username" [(ngModel)]="formStudent.username">
+                            <label style="margin-top: 30px;">Email</label>
+                            <input class="form-control" type="text" name="password" placeholder="Email" [(ngModel)]="formStudent.email">    
                             <label style="margin-top: 30px;">Mật Khẩu</label>
-                            <input class="form-control" type="password" name="password" placeholder="Password">
-                            <label style="margin-top: 30px;">Xác Nhận Mật Khẩu</label>
-                            <input class="form-control" type="password" name="password" placeholder="Repeat password">
+                            <input class="form-control" type="password" name="password" placeholder="Password" [(ngModel)]="formStudent.password">
+                            <label style="margin-top: 30px;">Họ Tên</label>
+                            <input class="form-control" type="text" name="hoten" placeholder="FullName" [(ngModel)]="formStudent.fullname">
+                            <label style="margin-top: 30px;">Ngày Sinh</label>
+                            <input class="form-control" type="date" name="date" placeholder="Birth" [(ngModel)]="formStudent.birthday">
+                            <label style="margin-top: 30px;">Giới Tính</label>
+                            <input class="form-control" type="text" name="gender" placeholder="Gender" [(ngModel)]="formStudent.gender">
+                            
                     </div>
-                    <div class="row" style="margin-top: 25px;">
-                        <div class="col-6">
-                                <a [routerLink]="['/dangnhap']">Đăng Nhập</a>
-                        </div>
-                        <div class="col-6">
-                                <a [routerLink]="['/quenmatkhau']" style="float: right">Quên Mật Khẩu</a>
-                        </div>
-                    </div>
+                   
                     
                 </form>
-                <button class="btn" id="dangnhap"><strong>Đăng Kí</strong></button>
+                <button class="btn" id="dangnhap"  (click)="studentLogin()"><strong>Đăng Kí</strong></button>
             </div>
         </div>
     </div>

@@ -1,0 +1,93 @@
+<div class="header container" style="padding-left:0px; padding-right: 0px; ">
+  <img id="id.banner" src="../assets/images/banner.png" style="width: 100%;">
+</div>
+<nav class=" container navbar navbar-expand-sm">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/trangchu']">Trang Chủ</a></strong>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link " [routerLink]="['/danhmucmonhoc']">
+        <strong> Danh Mục Môn Học</strong>
+      </a>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/lienhe']">Liên Hệ</a></strong>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/gopy']">Góp Ý</a></strong>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
+    </li>
+    <li class="nav-item dropdown">
+      <strong>
+        <a class="nav-link ">
+          <span>Tài Khoản</span>
+          <div class="dropdown-content">
+            <p [routerLink]="['/dangnhap']">Đăng Nhập</p>
+            <p [routerLink]="['/dangki']">Đăng Kí</p>
+            <p [routerLink]="['/quenmatkhau']">Quên Mật Khẩu</p>
+            <p [routerLink]="['/thongtin']">Thông Tin</p>
+          </div>
+        </a>
+      </strong>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="container " style="padding:0">
+  <div class="card">
+    <div class="card-header" style="background: linear-gradient(to right, #fc00ff, #00dbde);margin-left: 0">
+      <h2 style="text-align: center">Thông Tin</h2>
+    </div>
+    <div class="card-body">
+      <form>
+
+        <div class="form-group" *ngIf="isShow">
+
+          <label>Tài Khoản</label>
+          <input class="form-control" type="text" name="username" placeholder="Username" value="{{ListResult.username}}"
+          disabled>
+          <label style="margin-top: 30px;">Email</label>
+          <input class="form-control" type="text" name="emai" placeholder="Email" value="{{ListResult.email}}" disabled>
+          <label style="margin-top: 30px;">Mật Khẩu</label>
+          <input class="form-control" type="password" name="password" value="{{ListResult.password}}" disabled>
+          <label style="margin-top: 30px;">Họ Tên</label>
+          <input class="form-control" type="text" name="password" value="{{ListResult.fullname}}" disabled>
+          <label style="margin-top: 30px;">Ngày Sinh</label>
+          <input class="form-control" type="date" name="password" value="{{ListResult.birthday}}" disabled>
+          <h5>Lich su lam bai</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Diem</th>
+                <th>Mon</th>
+              </tr>
+
+            </thead>
+            <tbody>
+              <tr *ngFor= "let item of ListResult.marks">
+                <td>{{item.mark}}</td>
+                <td>{{item.idmon}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+        <div class="form-group" *ngIf="!isShow">
+          <label>Tài Khoản</label>
+          <input class="form-control" type="text" name="username" placeholder="Username" [(ngModel)]="Info.username">
+          <label style="margin-top: 30px;">Email</label>
+          <input class="form-control" type="text" name="email" placeholder="Email" [(ngModel)]="Info.email">
+        </div>
+
+        <button class="btn" id="dangnhap" *ngIf="!isShow" (click)="click()"><strong>Xem</strong></button>
+        <button class="btn" id="dangnhap" *ngIf="isShow" (click)="click()"><strong>Quay Lại</strong></button>
+      </form>
+
+    </div>
+  </div>
+</div>

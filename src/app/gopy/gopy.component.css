@@ -12,6 +12,7 @@
 
                 .navbar ul li:hover{
                     background-color: rgb(235, 223, 223);
+                    border-radius: 6px 6px;
                 }
 
                 .navbar{
@@ -38,17 +39,53 @@
     width: 1020px;
     height: 450px;
     opacity: 0.9;
-    border: double 10px green;
+    border: double 10px rgb(72, 190, 72);
     border-radius: 20px;
 }
 
 .textarea:focus{
     font-size: 25px;
     background-color: rgb(177, 221, 128);
-    color: white;
+    color: rgb(61, 55, 55);
 }
 #gui{
 background: linear-gradient(to right, #f5de15, rgb(15, 241, 34));
 width: 90%;
 margin: 0 auto;
+}
+
+/* ----DropDown Tai Khoan------- */
+.dropdown {
+    position: relative;
+    display: block;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    background-color: #e9ecefc7;
+    border-radius: 5px 5px;
+    width: 130px;
+    z-index: 1;
+  
+  }
+  
+  .dropdown-content p {
+    border-radius: 5px 5px;
+    height: 30px;
+    margin-bottom: 0px;
+    margin-top: 3px;
+    color:#47688c;
+    text-shadow: 2px 1px 1px #e9ecef;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content {
+      display: none;
+  }
+  .dropdown-content p:hover{
+    background-color: rgb(91, 230, 121);
+    border-radius: 7px 7px;
 }

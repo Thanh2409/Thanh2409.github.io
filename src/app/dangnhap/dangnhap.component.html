@@ -20,8 +20,18 @@
         <li class="nav-item">
             <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
         </li>
-        <li class="nav-item">
-            <strong><a class="nav-link" [routerLink]="['/dangnhap']">Đăng Nhập</a></strong>
+        <li class="nav-item dropdown">
+                <strong>
+                        <a class="nav-link " >
+                          <span>Tài Khoản</span>
+                          <div class="dropdown-content">
+                            <p [routerLink]="['/dangnhap']">Đăng Nhập</p>
+                            <p [routerLink]="['/dangki']">Đăng Kí</p>
+                            <p [routerLink]="['/quenmatkhau']">Quên Mật Khẩu</p>
+                            <p [routerLink]="['/thongtin']">Thông Tin</p>
+                          </div>
+                        </a>
+                      </strong>
         </li>
     </ul>
 </nav>
@@ -35,23 +45,21 @@
         <div class="card-body">
             <form>
                 <div class="form-group">
+                       
                         <label>Tài Khoản</label>
-                        <input class="form-control" type="text" name="hoten" placeholder="Username">
+                        <input class="form-control" type="text" name="hoten" placeholder="Username" [(ngModel)]="taikhoan" [ngModelOptions]="{standalone: true}">
                         <label style="margin-top: 30px;">Mật Khẩu</label>
-                        <input class="form-control" type="password" name="password" placeholder="Password">
+                        <input class="form-control" type="password" name="password" placeholder="Password" [(ngModel)]="matkhau" [ngModelOptions]="{standalone: true}">
                         
                 </div>
-                <div class="row" style="margin-top: 25px;">
-                    <div class="col-6">
-                            <a [routerLink]="['/dangki']">Đăng Kí</a>
-                    </div>
-                    <div class="col-6">
-                            <a [routerLink]="['/quenmatkhau']" style="float: right">Quên Mật Khẩu</a>
-                    </div>
-                </div>
                 
+                <button class="btn" id="dangnhap" (click)="check()"><strong>Đăng Nhập</strong></button>
             </form>
-            <button class="btn" id="dangnhap"><strong>Đăng Nhập</strong></button>
+           
         </div>
     </div>
+</div>
+<div class="container">
+    <p *ngFor="let p of InfoStudent">{{p.username}}</p>
+    
 </div>

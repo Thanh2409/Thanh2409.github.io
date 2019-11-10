@@ -20,8 +20,18 @@
         <li class="nav-item">
             <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
           </li>
-        <li class="nav-item">
-            <strong><a class="nav-link" [routerLink]="['/dangnhap']">Đăng Nhập</a></strong>
+        <li class="nav-item dropdown">
+                <strong>
+                        <a class="nav-link " >
+                          <span>Tài Khoản</span>
+                          <div class="dropdown-content">
+                            <p [routerLink]="['/dangnhap']">Đăng Nhập</p>
+                            <p [routerLink]="['/dangki']">Đăng Kí</p>
+                            <p [routerLink]="['/quenmatkhau']">Quên Mật Khẩu</p>
+                            <p [routerLink]="['/thongtin']">Thông Tin</p>
+                          </div>
+                        </a>
+                      </strong>
         </li>
     </ul>
 </nav>

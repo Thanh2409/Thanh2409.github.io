@@ -20,8 +20,18 @@
         <li class="nav-item">
             <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
         </li>
-        <li class="nav-item">
-            <strong><a class="nav-link" [routerLink]="['/dangnhap']">Đăng Nhập</a></strong>
+        <li class="nav-item dropdown">
+                <strong>
+                        <a class="nav-link ">
+                          <span>Tài Khoản</span>
+                          <div class="dropdown-content">
+                            <p [routerLink]="['/dangnhap']">Đăng Nhập</p>
+                            <p [routerLink]="['/dangki']">Đăng Kí</p>
+                            <p [routerLink]="['/quenmatkhau']">Quên Mật Khẩu</p>
+                            <p [routerLink]="['/thongtin']">Thông Tin</p>
+                          </div>
+                        </a>
+                      </strong>
         </li>
     </ul>
 </nav>
@@ -32,8 +42,8 @@
             Danh Mục Môn Học
         </div>
         <div class="card-body">
-            <ul *ngFor="let p of dulieu">
-                <li>{{p.name}}</li>
+            <ul *ngFor="let item of Subjects" [routerLink]="['/baithi',item.Id]">
+                <li>{{item.Name}}</li>
             </ul>
         </div>
     </div>
@@ -44,32 +54,30 @@
             <div class="row">
 
                 <div class="col col-6"
-                    *ngFor="let p of dulieu | paginate: { itemsPerPage: itemsperpage, currentPage: currentpage }"
-                    style="margin-bottom: 15px;background-color: #bcb5ad">
-                    <div class="card">
+                    *ngFor="let item of Subjects | paginate: { itemsPerPage: itemsperpage, currentPage: currentpage }"
+                    style="margin-bottom: 15px; border-radius: 4px 4px; background-color: #bcb5ad">
+                    <div class="card" [routerLink]="['/baithi',item.Id]">
                         <div class="card-header" style="background-color:#70af67">
-                            <strong>
-                                {{p.name}}
+                            <strong >
+                                {{item.Name}}
                             </strong>
                         </div>
-                        <div class="card-body" id="col6">
-                            <img src="../assets/images/{{p.anh}}">
+                        <div class="card-body" id="col6" >
+                            <img src="../assets/images/{{item.Logo}}">
                         </div>
                     </div>
                 </div>
-                <hr style="background-color:red">
+                
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container">
     <ul class="pagination">
         <li class="page-item"><a class="page-link" (click)="previouspage()">Previous</a></li>
         <li class="page-item"><a class="page-link" (click)="pagenow(1)">1</a></li>
         <li class="page-item"><a class="page-link" (click)="pagenow(2)">2</a></li>
         <li class="page-item"><a class="page-link" (click)="pagenow(3)">3</a></li>
-        <li class="page-item"><a class="page-link" (click)="pagenow(4)">4</a></li>
-        <li class="page-item"><a class="page-link" (click)="pagenow(5)">5</a></li>
         <li class="page-item"><a class="page-link" (click)="nextpage()">Next</a></li>
     </ul>
 </div>

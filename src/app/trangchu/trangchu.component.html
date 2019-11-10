@@ -1,182 +1,130 @@
 <div class="header container" style="padding-left:0px; padding-right: 0px; ">
-    <img id="id.banner" src="../assets/images/banner.png" style="width: 100%;">
+  <img id="id.banner" src="../assets/images/banner.png" style="width: 100%;">
 </div>
 <nav class=" container navbar navbar-expand-sm">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <strong><a class="nav-link" [routerLink]="['/trangchu']">Trang Chủ</a></strong>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link " [routerLink]="['/danhmucmonhoc']" >
-            <strong> Danh Mục Môn Học</strong>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/trangchu']">Trang Chủ</a></strong>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link " [routerLink]="['/danhmucmonhoc']">
+        <strong> Danh Mục Môn Học</strong>
+      </a>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/lienhe']">Liên Hệ</a></strong>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/gopy']">Góp Ý</a></strong>
+    </li>
+    <li class="nav-item">
+      <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
+    </li>
+    <li class="nav-item dropdown">
+      <strong>
+        <a class="nav-link " >
+          <span>Tài Khoản</span>
+          <div class="dropdown-content">
+            <p [routerLink]="['/dangnhap']">Đăng Nhập</p>
+            <p [routerLink]="['/dangki']">Đăng Kí</p>
+            <p [routerLink]="['/quenmatkhau']">Quên Mật Khẩu</p>
+            <p [routerLink]="['/thongtin']">Thông Tin</p>
+          </div>
         </a>
-      </li>
-      <li class="nav-item">
-        <strong><a class="nav-link" [routerLink]="['/lienhe']">Liên Hệ</a></strong>
-      </li>
-      <li class="nav-item">
-        <strong><a class="nav-link" [routerLink]="['/gopy']">Góp Ý</a></strong>
-      </li>
-      <li class="nav-item">
-        <strong><a class="nav-link" [routerLink]="['/hoidap']">Hỏi Đáp</a></strong>
-      </li>
-      <li class="nav-item">
-        <strong><a class="nav-link" [routerLink]="['/dangnhap']">Đăng Nhập</a></strong>
-      </li>
-    </ul>
-  </nav>
+      </strong>
+    </li>
+  </ul>
+</nav>
 
 <div class="container " style="padding-left:0px; padding-right: 0px; ">
-    <div class="content" style="width: 75%; float: left;">
-        <div class="card">
-            <div class="card-header text-center" style="background-color: rgb(95, 117, 172)">
-                <strong>Những Bài Thi Có Lượt Thi Nhiều Nhất!</strong>
+  <div class="content" style="width: 75%; float: left;">
+    <div class="card">
+      <div class="card-header text-center" style="background-color: rgb(95, 117, 172)">
+        <strong>Những Bài Thi Có Lượt Thi Nhiều Nhất!</strong>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col col-6"
+            *ngFor='let item of Subjects | paginate: { itemsPerPage: itemsperpage, currentPage: curentpage }'>
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="../assets/images/{{item.Logo}}">
+                <div id="marquee" [routerLink]="['/baithi']">
+                  <strong>
+                    {{item.Name}}
+                  </strong>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col col-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="../assets/images/GAME.png">
-                                <div id="marquee">
-                                    <strong>
-                                        GAME
-                                    </strong>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col col-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="../assets/images/CLCO.jpg">
-                                <div id="marquee">
-                                    <strong>
-                                    CLCO
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100">
-                        <br>
-                    </div>
-                    <div class="col col-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="../assets/images/MOWE.png">
-                                <div id="marquee">
-                                    <strong>
-                                        MOWE
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="../assets/images/Subject.png">
-                                <div id="marquee">
-                                    <strong>
-                                    SUBJECT
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100">
-                        <br>
-                    </div>
-                    <div class="col col-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="../assets/images/PHPP.png">
-                                <div id="marquee">
-                                    <strong>
-                                    PHPP
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <img src="../assets/images/HTCS.jpg">
-                                <div id="marquee">
-                                    <strong>
-                                    HTCS
-                                    </strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+            <div class="w-100">
+              <br>
             </div>
+          </div>
         </div>
+        <pagination-controls (pageChange)="curentpage = $event" style="text-align: center;">
+        </pagination-controls>
+      </div>
     </div>
-    <div class="gioithieu" style="width: 25%; float: left;">
-        <div class="card">
-            <div class="card-header text-center">
-                <h5><strong>Giới Thiệu</strong></h5>
-            </div>
-            <div class="card-body">
-                <p><Strong>Online Tranning</Strong> là một trong những website thi thử tốt
-                    nhất hiện nay. Với chủ đề đa dạng, kiến thức mới được cập nhật liên tục
-                    sẽ giúp bạn nâng cao kiến thứ cũng như kinh nghiệm của bạn trong thời gian
-                    ngắn.<br>
-                    Với đội ngũ đầy nhiệt huyết của chúng tôi <strong>Online Tranning</strong>
-                    luôn là một Website để mọi Lập Trình Viên tin tưởng và đồng hành!
-                </p>
-                <hr style="background-color: rgb(54, 51, 41)">
-                <h5 class="text-center">
-                    <strong style="margin-top:35px;">Bài Thi Thử Nổi Bật</strong>
-                </h5>
-                <div class="row" style="margin-top:35px;">
-                    <div class="col-5">
-                        <img class="text-center" src="../assets/images/PHPP.png" style="width:70%;">
-                    </div>
-                    <div class="col-7">
-                        <p style="color: rgb(247, 57, 57)">Top 1 trong các bài thi trong 3 tháng qua</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5">
-                        <img class="text-center" src="../assets/images/GAME.png" style="width:70%;">
-                    </div>
-                    <div class="col-7">
-                        <p style="color: rgb(247, 57, 57)">Xu hướng tìm kiếm cao</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5">
-                        <img class="text-center" src="../assets/images/DBBS.png" style="width:70%;">
-                    </div>
-                    <div class="col-7">
-                        <p style="color: rgb(247, 57, 57)">Có nhiều bài thi đạt điểm tối đa</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5">
-                        <img class="text-center" src="../assets/images/DBAV.png" style="width:70%;">
-                    </div>
-                    <div class="col-7">
-                        <p style="color: rgb(247, 57, 57)">Cập nhật 2 ngày trước</p>
-                    </div>
-                </div>
-                <div class="row">
-                        <div class="col-5">
-                            <img class="text-center" src="../assets/images/LAYO.jpg" style="width:70%;">
-                        </div>
-                        <div class="col-7">
-                            <p style="color: rgb(247, 57, 57)">Cập nhật 4 ngày trước </p>
-                        </div>
-                    </div>
-                    
-            </div>
+  </div>
+  <div class="gioithieu" style="width: 25%; height: 940px;float: left;">
+    <div class="card">
+      <div class="card-header text-center">
+        <h5><strong>Giới Thiệu</strong></h5>
+      </div>
+      <div class="card-body">
+        <p style="font-size: 19.5px;"><Strong>Online Tranning</Strong> là một trong những website thi thử tốt
+          nhất hiện nay. Với chủ đề đa dạng, kiến thức mới được cập nhật liên tục
+          sẽ giúp bạn nâng cao kiến thứ cũng như kinh nghiệm của bạn trong thời gian
+          ngắn.<br>
+          Với đội ngũ đầy nhiệt huyết của chúng tôi <strong>Online Tranning</strong>
+          luôn là một Website để mọi Lập Trình Viên tin tưởng và đồng hành!
+        </p>
+        <hr style="background-color: rgb(54, 51, 41)">
+        <h5 class="text-center">
+          <strong style="margin-top:35px;">Bài Thi Thử Nổi Bật</strong>
+        </h5>
+        <div class="row" style="margin-top:35px;">
+          <div class="col-5">
+            <img class="text-center" src="../assets/images/PHPP.png" style="width:70%;">
+          </div>
+          <div class="col-7">
+            <p style="color: rgb(247, 57, 57)">Top 1 trong các bài thi trong 3 tháng qua</p>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-5">
+            <img class="text-center" src="../assets/images/GAME.png" style="width:70%;">
+          </div>
+          <div class="col-7">
+            <p style="color: rgb(247, 57, 57)">Xu hướng tìm kiếm cao</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <img class="text-center" src="../assets/images/DBBS.png" style="width:70%;">
+          </div>
+          <div class="col-7">
+            <p style="color: rgb(247, 57, 57)">Có nhiều bài thi đạt điểm tối đa</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <img class="text-center" src="../assets/images/DBAV.png" style="width:70%;">
+          </div>
+          <div class="col-7">
+            <p style="color: rgb(247, 57, 57)">Cập nhật 2 ngày trước</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <img class="text-center" src="../assets/images/LAYO.jpg" style="width:70%;">
+          </div>
+          <div class="col-7">
+            <p style="color: rgb(247, 57, 57)">Cập nhật 4 ngày trước </p>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 </div>
